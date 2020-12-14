@@ -1,0 +1,43 @@
+header{
+    background-color: black;
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+header>span{
+    background-color: blue;
+    padding: 0.4cm;
+    margin:0 0.1cm;
+    color: white;
+    cursor: pointer;
+    transition: all 0.6s;
+    font-size: large;
+    
+}
+
+header>span:hover{
+    background-color: blueviolet;
+    color: black;
+}
+
+main {
+    display:flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.film {
+    display: flex;
+    flex-direction: column;
+    padding: 1cm;
+
+}
+
+.film h3{
+    display: flex;
+    justify-content: center;
+}
