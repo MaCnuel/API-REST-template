@@ -31,13 +31,18 @@ main {
 }
 
 .film {
-    display: flex;
-    flex-direction: column;
     padding: 1cm;
+    cursor: pointer;
 
+}
+
+.film img{
+    display: flex;
+    justify-content: center;
 }
 
 .film h3{
     display: flex;
     justify-content: center;
 }
+
