@@ -2,7 +2,8 @@ header{
     background-color: black;
     width: 100%;
     min-height: 40px;
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(100px, auto) minmax(100px, auto) 1fr;
     align-items: center;
     padding-left: 10px;
 }
@@ -21,6 +22,22 @@ header>span{
 header>span:hover{
     background-color: blueviolet;
     color: black;
+}
+
+header>div{
+    display: grid;
+    justify-content: end;
+    margin-right:10px
+}
+
+header input[type="text"]{
+    min-width: 300px;
+    min-height: 30px;
+    border-radius: 25px;
+    padding-left: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic;
 }
 
 main {
