@@ -1,5 +1,7 @@
 //API for movies
 
+
+/*********Part of Film detail********/
 const getFilmDetailedHTML = film =>{
     return `
     <div class="film" onclick="getFilmDetailed(${film.id})">
@@ -20,11 +22,12 @@ const getFilmDetailed = film_id =>{
         .catch(console.error);
 }
 
+/**********Part of film list********/
 const getFilmHTML = film =>{ //InnerHTML to be added for each movie
     return `
     <div class="film" onclick="getFilmDetailed(${film.id})">
         <h3>${film.title}</h3>
-        <img src="https://image.tmdb.org/t/p/w185${film.poster_path}" alt="">
+        <img src="https://image.tmdb.org/t/p/w185${film.poster_path}" alt="imagen de la película">
     </div>
     `;
 }
@@ -61,4 +64,18 @@ const getUpcomingFilms = async () => {
     }
     
 
+}
+
+const searchFilm = async () => {
+
+    let searchId = document.querySelector('header input');
+
+    try {
+        const search = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=079c21f9801a3caa498a95d9d9dfe4ca&query=${searchId.value}&page=1`)
+        const filmsSearched = search.data.results;
+        renderFilms(filmsSearched);
+
+    } catch (error) {
+        console.error(error);
+    };
 }
